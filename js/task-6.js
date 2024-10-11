@@ -21,13 +21,11 @@ function createMarkup() {
 }
 
 function createBoxes(amount) {
+  let boxesHTML = "";
   for (let i = 0; i < amount; i++) {
-    const box = document.createElement("div");
-    box.style.width = `${sizes}px`;
-    box.style.height = `${sizes}px`;
-    box.style.backgroundColor = getRandomHexColor();
+    boxesHTML += `<div style="width: ${sizes}px; height: ${sizes}px; background-color: ${getRandomHexColor()}";></div>`;
     
-    boxesContainer.append(box);
+    boxesContainer.innerHTML = boxesHTML;
     sizes += 10;
   }
 }

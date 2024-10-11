@@ -27,15 +27,14 @@ const images = [
 
 const navEl = document.querySelector(".gallery");
 
-const elements = images.map(image => {
-  const navItem = document.createElement("li");
-  navItem.classList.add(".gallery-item");
-  const navImage = document.createElement("img");
-  navImage.classList.add(".gallery-item-img");
-  navImage.src = image.url;
-  navImage.alt = image.alt;
-  navImage.width = 360;
+const elements = images
+  .map(image => {
+    return `
+      <li class="gallery-item">
+         <img class="gallery-item-img" src="${image.url}" alt="${image.alt}">
+      </li> 
+    `;
+  })
+  .join("");
 
-  navItem.append(navImage);
-  navEl.insertAdjacentElement("beforeend", navItem);
-});
+navEl.insertAdjacentHTML("beforeend", elements);
