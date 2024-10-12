@@ -23,11 +23,11 @@ function createMarkup() {
 function createBoxes(amount) {
   let boxesHTML = "";
   for (let i = 0; i < amount; i++) {
-    boxesHTML += `<div style="width: ${sizes}px; height: ${sizes}px; background-color: ${getRandomHexColor()}";></div>`;
+    boxesHTML += `<div style="width: ${sizes}px; height: ${sizes}px; background-color: ${getRandomHexColor()};"></div>`;
     
-    boxesContainer.innerHTML = boxesHTML;
     sizes += 10;
   }
+  boxesContainer.innerHTML = boxesHTML;
 }
 
 function getRandomHexColor() {
